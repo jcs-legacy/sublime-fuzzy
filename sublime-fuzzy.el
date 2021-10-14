@@ -7,8 +7,8 @@
 ;; Description: Fuzzy matching algorithm based on Sublime Text's string search.
 ;; Keyword: sublime fuzzy algorithm
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "24.3"))
-;; URL: https://github.com/jcs090218/sublime-fuzzy
+;; Package-Requires: ((emacs "25.1"))
+;; URL: https://github.com/jcs-elpa/sublime-fuzzy
 
 ;; This file is NOT part of GNU Emacs.
 
