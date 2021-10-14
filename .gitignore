@@ -2,8 +2,18 @@
 /.git
 /recipes
 
-# ignore generated files.
+# Rust
+/target
+**/*.rs.bk
+
+# Elisp
 *.elc
+.cask
 
 # ignore video
 /video
+
+# Added by cargo
+
+/target
+Cargo.lock
