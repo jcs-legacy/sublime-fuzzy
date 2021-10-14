@@ -1,0 +1,15 @@
+[package]
+name = "sublime-fuzzy"
+version = "0.1.0"
+authors = ["Jen-Chieh Shen <jcs090218@gmail.com>"]
+edition = "2018"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+name = "sublime_fuzzy"
+crate-type = ["cdylib"]
+
+[dependencies]
+emacs = "0.11.0"
+sublime_fuzzy = "0.7.0"
