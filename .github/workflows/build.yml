@@ -29,13 +29,13 @@ jobs:
         with:
           rust-version: stable
 
-      - name: Install LLVM and Clang
+      - name: Install LLVM and Clang (Unix)
         if: runner.os != 'Windows'
         uses: KyleMayes/install-llvm-action@v1
         with:
           version: "10.0"
 
-      - name: Add clang path to $PATH env
+      - name: Install LLVM and Clang (Windows)
         if: runner.os == 'Windows'
         run: .github/script/setup-llvm
 
