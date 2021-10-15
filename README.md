@@ -6,6 +6,10 @@
 [![CI](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml)
 [![Build](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml)
 
+## 🔗 References
+
+* https://crates.io/crates/sublime_fuzzy/0.2.0
+
 ## Contribution
 
 If you would like to contribute to this project, you may either
