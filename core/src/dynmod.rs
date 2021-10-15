@@ -20,6 +20,6 @@ use sublime_fuzzy::best_match;
 #[defun]
 fn score(_env: &Env, pattern: String, source: String)
          -> Result<Option<i64>> {
-    let result = best_match(&pattern, &source).unwrap()
+    let result = best_match(&pattern, &source).unwrap();
     Ok(return result.score())
 }
