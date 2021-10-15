@@ -8,8 +8,16 @@
 
 ## 🔨 Usage
 
+Load by calling the following function,
+
 ```el
 (sublime-fuzzy-load-dyn)
+```
+
+Calculate the score with `PATTERN` and `SOURCE`:
+
+```el
+(sublime-fuzzy-score "something" "some else thing")
 ```
 
 ## 🔗 References
