@@ -25,5 +25,5 @@ fn sublime_fuzzy_score(pattern: &str, source: &str) -> Option<i64> {
 #[defun]
 fn score(_env: &Env, pattern: String, source: String)
          -> Result<Option<i64>> {
-    Ok(sublime_fuzzy_score(pattern, source))
+    Ok(sublime_fuzzy_score(&pattern, &source))
 }
