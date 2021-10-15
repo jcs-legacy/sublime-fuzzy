@@ -57,6 +57,7 @@
 ;; (@* "Bootstrap" )
 ;;
 
+;;;###autoload
 (defun sublime-fuzzy-load-dyn ()
   "Load dynamic module."
   (interactive)
