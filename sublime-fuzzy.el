@@ -1,4 +1,4 @@
-;;; sublime-fuzzy.el --- Fuzzy matching algorithm based on Sublime Text's string search  -*- lexical-binding: t; -*-
+;;; sublime-fuzzy.el --- Fuzzy matching algorithm like Sublime Text's string search  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021  Shen, Jen-Chieh
 ;; Created date 2021-10-15 01:03:01
@@ -32,7 +32,14 @@
 
 ;;; Code:
 
-(require 'sublime-fuzzy-dyn)
+(require 'cl-lib)
+
+(defconst sublime-fuzzy--bin-dir
+  (concat (file-name-directory load-file-name) "bin/")
+  "Pre-built binaries directory path.")
+
+(defconst sublime-fuzzy--dyn-name "sublime_fuzzy_dyn"
+  "Dynamic module name.")
 
 ;;
 ;; (@* "Externals" )
@@ -45,6 +52,21 @@
 ;;
 
 (defalias 'sublime-fuzzy-score #'sublime-fuzzy-dyn-score)
+
+;;
+;; (@* "Bootstrap" )
+;;
+
+(defun sublime-fuzzy-load-dyn ()
+  "Load dynamic module."
+  (interactive)
+  (let* ((dyn-name (cl-case system-type
+                     ((windows-nt ms-dos cygwin) (concat sublime-fuzzy--dyn-name ".dll"))
+                     (darwin (concat "lib" sublime-fuzzy--dyn-name ".dylib"))
+                     (t (concat "lib" sublime-fuzzy--dyn-name ".so"))))
+         (dyn-path (concat sublime-fuzzy--bin-dir dyn-name)))
+    (module-load dyn-path)
+    (message "[INFO] Successfully load dynamic module: %s" dyn-name)))
 
 (provide 'sublime-fuzzy)
 ;;; sublime-fuzzy.el ends here
