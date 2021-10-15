@@ -36,9 +36,12 @@ jobs:
           cd core
           cargo build --release
 
+      - name: install tree
+        run: sudo apt-get install -y tree
+
       - name: print info
         run: |
-          tree core
+          tree ./core
 
       - name: Upload binaries
         uses: actions/upload-artifact@v1
