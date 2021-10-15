@@ -11,5 +11,5 @@ name = "sublime_fuzzy_dyn"
 crate-type = ["cdylib"]
 
 [dependencies]
-emacs = "0.11.0"
+emacs = "0.17"
 sublime_fuzzy = "0.7.0"
