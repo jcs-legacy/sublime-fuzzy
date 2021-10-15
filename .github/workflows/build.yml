@@ -35,11 +35,6 @@ jobs:
         with:
           version: "10.0"
 
-      - name: Add clang path to $PATH env
-        if: runner.os == 'Windows'
-        shell: bash
-        run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV
-
       - name: Build binaries
         run: |
           cd core
