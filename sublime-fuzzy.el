@@ -61,13 +61,14 @@
 (defun sublime-fuzzy-load-dyn ()
   "Load dynamic module."
   (interactive)
-  (let* ((dyn-name (cl-case system-type
-                     ((windows-nt ms-dos cygwin) (concat sublime-fuzzy--dyn-name ".dll"))
-                     (darwin (concat "lib" sublime-fuzzy--dyn-name ".dylib"))
-                     (t (concat "lib" sublime-fuzzy--dyn-name ".so"))))
-         (dyn-path (concat sublime-fuzzy--bin-dir dyn-name)))
-    (module-load dyn-path)
-    (message "[INFO] Successfully load dynamic module: %s" dyn-name)))
+  (unless (featurep 'sublime-fuzzy-dyn)
+    (let* ((dyn-name (cl-case system-type
+                       ((windows-nt ms-dos cygwin) (concat sublime-fuzzy--dyn-name ".dll"))
+                       (darwin (concat "lib" sublime-fuzzy--dyn-name ".dylib"))
+                       (t (concat "lib" sublime-fuzzy--dyn-name ".so"))))
+           (dyn-path (concat sublime-fuzzy--bin-dir dyn-name)))
+      (module-load dyn-path)
+      (message "[INFO] Successfully load dynamic module: %s" dyn-name))))
 
 (provide 'sublime-fuzzy)
 ;;; sublime-fuzzy.el ends here
