@@ -32,19 +32,19 @@
 
 ;;; Code:
 
-(require 'sublime-fuzzy-core)
+(require 'sublime-fuzzy-dyn)
 
 ;;
 ;; (@* "Externals" )
 ;;
 
-(declare-function sublime-fuzzy-core-score "fuz-core")
+(declare-function sublime-fuzzy-dyn-score "sublime-fuzzy-dyn")
 
 ;;
 ;; (@* "Aliases" )
 ;;
 
-(defalias 'sublime-fuzzy-score #'sublime-fuzzy-core-score)
+(defalias 'sublime-fuzzy-score #'sublime-fuzzy-dyn-score)
 
 (provide 'sublime-fuzzy)
 ;;; sublime-fuzzy.el ends here

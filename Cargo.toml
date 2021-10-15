@@ -7,7 +7,7 @@ publish = false
 
 [lib]
 path = "src/lib.rs"
-name = "sublime_fuzzy_core"
+name = "sublime_fuzzy_dyn"
 crate-type = ["cdylib"]
 
 [dependencies]
