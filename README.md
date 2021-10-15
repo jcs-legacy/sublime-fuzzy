@@ -6,7 +6,7 @@
 [![CI](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml)
 [![Build](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml)
 
-This is the same with [flx](https://github.com/lewang/flx) created by @lewang,
+This is the same with [flx](https://github.com/lewang/flx) created by [lewang](https://github.com/lewang/),
 but this is powered by pre-built binaries using [Emacs Dynamic Modules](https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html).
 You might consider using this package if you want some performance gained!
 
