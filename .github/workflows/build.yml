@@ -30,9 +30,15 @@ jobs:
           rust-version: stable
 
       - name: Install LLVM and Clang
+        if: runner.os != 'Windows'
         uses: KyleMayes/install-llvm-action@v1
         with:
           version: "10.0"
+
+      - name: Add clang path to $PATH env
+        if: runner.os == 'Windows'
+        shell: bash
+        run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV
 
       - name: Build binaries
         run: |
@@ -40,7 +46,15 @@ jobs:
           cargo build --release
 
       - name: Upload binaries
+        if: runner.os != 'Windows'
         uses: actions/upload-artifact@v1
         with:
           name: ${{ env.DYN_NAME }}.${{ matrix.ext }}
           path: core/target/release/lib${{ env.DYN_NAME }}.${{ matrix.ext }}
+
+      - name: Upload binaries
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ env.DYN_NAME }}.${{ matrix.ext }}
+          path: core/target/release/${{ env.DYN_NAME }}.${{ matrix.ext }}
