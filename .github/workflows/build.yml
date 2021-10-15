@@ -37,8 +37,7 @@ jobs:
 
       - name: Add clang path to $PATH env
         if: runner.os == 'Windows'
-        shell: bash
-        run: set "PATH=%PATH%;C:\msys64\mingw64\bin"
+        run: .github/script/setup-llvm
 
       - name: Build binaries
         run: |
