@@ -36,6 +36,10 @@ jobs:
           cd core
           cargo build --release
 
+      - name: print info
+        run: |
+          tree core
+
       - name: Upload binaries
         uses: actions/upload-artifact@v1
         with:
