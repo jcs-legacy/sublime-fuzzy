@@ -20,7 +20,15 @@ jobs:
                   python-version: "3.6"
                   architecture: "x64"
 
+            - name: Setup | Rust
+              uses: ATiltedTree/setup-rust@v1
+              with:
+                  rust-version: stable
+
             - name: Install LLVM and Clang
               uses: KyleMayes/install-llvm-action@v1
               with:
                   version: "10.0"
+
+            - name: Build
+              run: cargo build --release
