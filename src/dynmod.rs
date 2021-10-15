@@ -11,6 +11,12 @@ use emacs::{defun, Env, Result, Value, IntoLisp};
 
 use sublime_fuzzy::best_match;
 
+/// Return the PATTERN fuzzy score about SOURCE
+///
+/// # Arguments
+///
+/// * `pattern` - Pattern string use to search.
+/// * `source` - Target string to match.
 #[defun]
 fn score(_env: &Env, pattern: String, source: String)
          -> Result<Option<i64>> {
