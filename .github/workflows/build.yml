@@ -24,16 +24,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup | Rust
-        uses: ATiltedTree/setup-rust@v1
+      - uses: actions-rs/toolchain@v1
         with:
-          rust-version: stable
+          toolchain: stable
 
       - name: Install LLVM and Clang
         if: runner.os != 'Windows'
         uses: KyleMayes/install-llvm-action@v1
         with:
           version: "10.0"
+
+      - name: Add clang path to $PATH env
+        if: runner.os == 'Windows'
+        shell: bash
+        run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV
 
       - name: Build binaries
         run: |
