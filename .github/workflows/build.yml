@@ -7,28 +7,34 @@ on:
   pull_request:
 
 jobs:
-    unix-build:
-        runs-on: ${{ matrix.os }}
-        strategy:
-            matrix:
-                os: [ubuntu-latest, macos-latest, windows-latest]
-        steps:
-            - uses: actions/checkout@v2
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            ext: dylib
+          - os: macos-latest
+            ext: so
+          - os: windows-latest
+            ext: dll
+    steps:
+      - uses: actions/checkout@v2
 
-            - uses: actions/setup-python@v2
-              with:
-                  python-version: "3.6"
-                  architecture: "x64"
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.6"
+          architecture: "x64"
 
-            - name: Setup | Rust
-              uses: ATiltedTree/setup-rust@v1
-              with:
-                  rust-version: stable
+      - name: Setup | Rust
+        uses: ATiltedTree/setup-rust@v1
+        with:
+          rust-version: stable
 
-            - name: Install LLVM and Clang
-              uses: KyleMayes/install-llvm-action@v1
-              with:
-                  version: "10.0"
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "10.0"
 
-            - name: Build binaries
-              run: cargo build --release
+      - name: Build binaries
+        run: cargo build --release
