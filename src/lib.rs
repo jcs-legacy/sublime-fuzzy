@@ -1,5 +1,5 @@
 extern crate emacs;
-extern crate fuzzy_matcher;
+extern crate sublime_fuzzy;
 
 use emacs::{ Env, Result };
 
