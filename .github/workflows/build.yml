@@ -13,9 +13,9 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            ext: dylib
-          - os: macos-latest
             ext: so
+          - os: macos-latest
+            ext: dylib
           - os: windows-latest
             ext: dll
     steps:
@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: sublime_fuzzy_dyn.${{ matrix.ext }}
-          path: target/release/sublime_fuzzy_dyn.${{ matrix.ext }}
+          path: core/target/release/sublime_fuzzy_dyn.${{ matrix.ext }}
