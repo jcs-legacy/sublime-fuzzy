@@ -21,11 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-python@v2
-        with:
-          python-version: "3.6"
-          architecture: "x64"
-
       - name: Setup | Rust
         uses: ATiltedTree/setup-rust@v1
         with:
@@ -40,3 +35,9 @@ jobs:
         run: |
           cd core
           cargo build --release
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v1
+        with:
+          name: sublime_fuzzy_dyn.${{ matrix.ext }}
+          path: target/release/sublime_fuzzy_dyn.${{ matrix.ext }}
