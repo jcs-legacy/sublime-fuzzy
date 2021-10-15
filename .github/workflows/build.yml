@@ -30,7 +30,7 @@ jobs:
           rust-version: stable
 
       - name: Install LLVM and Clang
-        if: runner.os = 'Windows'
+        if: runner.os != 'Windows'
         uses: KyleMayes/install-llvm-action@v1
         with:
           version: "10.0"
