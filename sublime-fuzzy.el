@@ -6,7 +6,7 @@
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Description: Fuzzy matching algorithm based on Sublime Text's string search.
 ;; Keyword: sublime fuzzy algorithm
-;; Version: 0.0.1
+;; Version: 0.1.0
 ;; Package-Requires: ((emacs "25.1"))
 ;; URL: https://github.com/jcs-elpa/sublime-fuzzy
 
