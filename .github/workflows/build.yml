@@ -6,6 +6,9 @@ on:
       - master
   pull_request:
 
+env:
+  DYN_NAME: sublime_fuzzy_dyn
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -36,9 +39,6 @@ jobs:
           cd core
           cargo build --release
 
-      - name: install tree
-        run: sudo apt-get install -y tree
-
       - name: print info
         run: |
           tree ./core
@@ -46,5 +46,5 @@ jobs:
       - name: Upload binaries
         uses: actions/upload-artifact@v1
         with:
-          name: sublime_fuzzy_dyn.${{ matrix.ext }}
-          path: core/target/release/sublime_fuzzy_dyn.${{ matrix.ext }}
+          name: ${{ DYN_NAME }}.${{ matrix.ext }}
+          path: core/target/release/${{ DYN_NAME }}.${{ matrix.ext }}
