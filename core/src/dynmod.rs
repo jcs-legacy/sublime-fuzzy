@@ -11,6 +11,11 @@ use emacs::{defun, Env, Result};
 
 use sublime_fuzzy::best_match;
 
+fn sublime_fuzzy_score(pattern: &str, source: &str) -> Option<i64> {
+    let result = best_match(pattern, source).unwrap();
+    return result.score()
+}
+
 /// Return the PATTERN fuzzy score about SOURCE
 ///
 /// # Arguments
@@ -20,6 +25,5 @@ use sublime_fuzzy::best_match;
 #[defun]
 fn score(_env: &Env, pattern: String, source: String)
          -> Result<Option<i64>> {
-    let result = best_match(&pattern, &source).unwrap();
-    Ok(return result.score())
+    Ok(sublime_fuzzy_score())
 }
