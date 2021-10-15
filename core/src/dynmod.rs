@@ -13,7 +13,7 @@ use sublime_fuzzy::best_match;
 
 fn sublime_fuzzy_score(pattern: &str, source: &str) -> Option<i64> {
     let result = best_match(pattern, source).unwrap();
-    return result.score() as i64
+    return Some(result.score() as i64)
 }
 
 /// Return the PATTERN fuzzy score about SOURCE
