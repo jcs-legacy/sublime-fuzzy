@@ -68,7 +68,7 @@
                        (t (concat "lib" sublime-fuzzy--dyn-name ".so"))))
            (dyn-path (concat sublime-fuzzy--bin-dir dyn-name)))
       (module-load dyn-path)
-      (message "[INFO] Successfully load dynamic module: %s" dyn-name))))
+      (message "[INFO] Successfully load dynamic module, `%s`" dyn-name))))
 
 (provide 'sublime-fuzzy)
 ;;; sublime-fuzzy.el ends here
