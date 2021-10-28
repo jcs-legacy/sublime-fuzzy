@@ -64,7 +64,7 @@
   (unless (featurep 'sublime-fuzzy-dyn)
     (let* ((dyn-name (cl-case system-type
                        ((windows-nt ms-dos cygwin) (concat sublime-fuzzy--dyn-name ".dll"))
-                       (darwin (concat "lib" sublime-fuzzy--dyn-name ".dylib"))
+                       (`darwin (concat "lib" sublime-fuzzy--dyn-name ".dylib"))
                        (t (concat "lib" sublime-fuzzy--dyn-name ".so"))))
            (dyn-path (concat sublime-fuzzy--bin-dir dyn-name)))
       (module-load dyn-path)
