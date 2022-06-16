@@ -4,11 +4,10 @@
 ;; Created date 2021-10-15 01:03:01
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; Description: Fuzzy matching algorithm based on Sublime Text's string search.
-;; Keyword: sublime fuzzy algorithm
+;; URL: https://github.com/jcs-elpa/sublime-fuzzy
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "25.1"))
-;; URL: https://github.com/jcs-elpa/sublime-fuzzy
+;; Keywords: sublime fuzzy algorithm
 
 ;; This file is NOT part of GNU Emacs.
 
