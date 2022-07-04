@@ -7,7 +7,7 @@
 ;; URL: https://github.com/jcs-elpa/sublime-fuzzy
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "25.1"))
-;; Keywords: sublime fuzzy algorithm
+;; Keywords: matching sublime fuzzy algorithm
 
 ;; This file is NOT part of GNU Emacs.
 
