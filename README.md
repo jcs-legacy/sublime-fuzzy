@@ -4,8 +4,8 @@
 # sublime-fuzzy
 > Fuzzy matching algorithm based on Sublime Text's string search
 
-[![CI](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml)
-[![Build](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml)
+[![CI](https://github.com/jcs-legacy/sublime-fuzzy/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-legacy/sublime-fuzzy/actions/workflows/test.yml)
+[![Build](https://github.com/jcs-legacy/sublime-fuzzy/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-legacy/sublime-fuzzy/actions/workflows/build.yml)
 
 Build [sublime_fuzzy](https://github.com/Schlechtwetterfront/fuzzy-rs) in Rust
 to Emacs loadable binaries.
