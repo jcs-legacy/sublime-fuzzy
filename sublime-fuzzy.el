@@ -1,6 +1,6 @@
 ;;; sublime-fuzzy.el --- Fuzzy matching algorithm like Sublime Text's string search  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2021  Shen, Jen-Chieh
+;; Copyright (C) 2021-2024  Shen, Jen-Chieh
 ;; Created date 2021-10-15 01:03:01
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
