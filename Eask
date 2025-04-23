@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "sublime-fuzzy"
          "0.1.0"
          "Fuzzy matching algorithm like Sublime Text's string search")
